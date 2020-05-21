@@ -1,5 +1,6 @@
 package com.baeldung.cloud.openfeign;
 
+import com.baeldung.cloud.openfeign.model.ConsultaMatriculaResponse;
 import com.baeldung.cloud.openfeign.model.Post;
 import com.baeldung.cloud.openfeign.service.JSONPlaceHolderService;
 import org.junit.Test;
@@ -30,6 +31,16 @@ public class OpenfeignUnitTest {
     public void getPostById() {
         Post post = jsonPlaceHolderService.getPostById(1L);
         assertNotNull(post);
+    }
+
+    @Test
+    public void getMatriculaResponses() {
+        ConsultaMatriculaResponse consultaMatriculaResponse = jsonPlaceHolderService.getMatriculaResponses(
+                "usuariopruebas",
+                "04",
+                "0000621041"
+        );
+        assertNotNull(consultaMatriculaResponse);
     }
 
 }
